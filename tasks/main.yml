@@ -1,0 +1,13 @@
+---
+# tasks file for ansible-role-glusterfs
+
+- name: Configure The GlusterFS Repo.
+  template: src=glusterfs.repo.j2 dest=/etc/yum.repos.d/glusterfs.repo
+
+- name: Install GlusterFS Servers.
+  include: glusterfs-server.yml
+  when: glusterfs_server
+
+- name: Install GlusterFS Clients.
+  include: glusterfs-client.yml
+  when: glusterfs_client

@@ -1,0 +1,7 @@
+---
+# defaults file for ansible-role-glusterfs
+
+glusterfs_repo_baseurl: http://download.gluster.org/pub/gluster/glusterfs/3.4/LATEST/EPEL.repo/epel-7/x86_64/
+glusterfs_baserepo_disabled: false
+glusterfs_server: false
+glusterfs_client: false

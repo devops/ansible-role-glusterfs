@@ -1,0 +1,10 @@
+---
+# tasks file for glusterfs-server
+
+- name: Install GlusterFS Server
+  yum: name={{ item }} state=present
+  with_items:
+    - glusterfs-server
+
+- name: Ensure GlusterFS is started and enabled at boot.
+  service: name=glusterd state=started enabled=yes

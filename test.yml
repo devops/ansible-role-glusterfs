@@ -1,0 +1,15 @@
+- name: Install GlusterFS Server
+  hosts: glusterfs-server
+  vars:
+    glusterfs_repo_baseurl: http://download.gluster.org/pub/gluster/glusterfs/3.4/LATEST/EPEL.repo/epel-7/x86_64/
+    glusterfs_server: true
+  roles:
+    - ansible-role-glusterfs
+
+- name: Install GlusterFS Client
+  hosts: glusterfs-client
+  vars:
+    glusterfs_repo_baseurl: http://download.gluster.org/pub/gluster/glusterfs/3.4/LATEST/EPEL.repo/epel-7/x86_64/
+    glusterfs_client: true
+  roles:
+    - ansible-role-glusterfs
